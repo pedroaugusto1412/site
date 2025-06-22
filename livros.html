@@ -1,0 +1,92 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css\Untitled-1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ </head>
+ <body>
+    <div class="botoes">
+        <h2 style="color: white;">biblioteca mil palavras</h2>
+        <nav> 
+           <ul>
+           <li><a href="index.html">inicio</a></li>
+            <li><a href="livros.html">livros</a></li>
+            <li><a href="contatos.html">contatos</a></li>
+           </ul>
+        </nav>
+        </div>
+        <form class="d-flex search-bar">
+                <input class="form-control me-2" type="search" placeholder="Buscar livro" aria-label="Search" id="searchInput">
+                <button class="btn btn-outline-success" type="button" onclick="buscarLivro()">Buscar</button>
+            </form>
+
+ <div class="container">
+        <h1 class="text-center mt-5">Livros Disponíveis</h1>
+        <div class="livro-card" id="livros">
+            <div class="livro" data-nome="Dom Casmurro">
+                <img src="https://m.media-amazon.com/images/I/61Z2bMhGicL.jpg" alt="Dom Casmurro">
+                <h5>Dom Casmurro</h5>
+                <p>Autor: Machado de Assis</p>
+                <p>Categoria: Romance</p>
+                <a href="https://www.amazon.com.br/Dom-Casmurro-Machado-Assis/dp/859431860X" class="btn btn-primary mt-2">Saiba mais</a>
+            </div>
+            <div class="livro" data-nome="O Pequeno Príncipe">
+                <img src="https://images-na.ssl-images-amazon.com/images/I/81QluJ4QXyL._AC_UL900_SR615,900_.jpg" alt="O Pequeno Príncipe">
+                <h5>O Pequeno Príncipe</h5>
+                <p>Autor: Antoine de Saint-Exupéry</p>
+                <p>Categoria: Infantojuvenil</p>
+                <a href="https://www.amazon.com.br/Pequeno-Pr%C3%ADncipe-Original-Tradu%C3%A7%C3%A3o-aquarelas/dp/8595081514" class="btn btn-primary mt-2">Saiba mais</a>
+            </div>
+            <div class="livro" data-nome="1984">
+                <img src="https://m.media-amazon.com/images/I/61t0bwt1s3L._UF1000,1000_QL80_.jpg" alt="1984">
+                <h5>1984</h5>
+                <p>Autor: George Orwell</p>
+                <p>Categoria: Distopia</p>
+                <a href="https://www.amazon.com.br/1984-George-Orwell/dp/6555522267" class="btn btn-primary mt-2">Saiba mais</a>
+            </div>
+            <div class="livro" data-nome="Capitães da Areia">
+                <img src="https://m.media-amazon.com/images/I/81t7altQZxL.jpg" alt="Capitães da Areia">
+                <h5>Capitães da Areia</h5>
+                <p>Autor: Jorge Amado</p>
+                <p>Categoria: Drama</p>
+                <a href="https://www.amazon.com.br/Capit%C3%A3es-areia-Jorge-Amado/dp/8535914064" class="btn btn-primary mt-2">Saiba mais</a>
+            </div>
+            <div class="livro" data-nome="A Revolução dos Bichos">
+                <img src="https://m.media-amazon.com/images/I/91BsZhxCRjL._UF1000,1000_QL80_.jpg" alt="A Revolução dos Bichos">
+                <h5>A Revolução dos Bichos</h5>
+                <p>Autor: George Orwell</p>
+                <p>Categoria: Sátira</p>
+                <a href="https://www.amazon.com.br/revolu%C3%A7%C3%A3o-dos-bichos-conto-fadas/dp/8535909559" class="btn btn-primary mt-2">Saiba mais</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 mb-4 text-muted">
+        <p>&copy; 2025 Biblioteca Central. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        function buscarLivro() {
+            const termo = document.getElementById('searchInput').value.toLowerCase();
+            const livros = document.querySelectorAll('.livro');
+            let encontrou = false;
+            livros.forEach(livro => {
+                const nome = livro.dataset.nome.toLowerCase();
+                if (nome.includes(termo)) {
+                    livro.style.display = 'block';
+                    encontrou = true;
+                } else {
+                    livro.style.display = 'none';
+                }
+            });
+            if (!encontrou) {
+                alert('Livro não encontrado no acervo.');
+            }
+        }
+    </script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ </body>
+ </html>
+ 
